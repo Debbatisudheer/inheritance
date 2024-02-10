@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bank Management System</h1>
+        <div class="account">
+            <h2>Account(super/base class)</h2>
+            <p>account_number: 123456789 </p>
+            <p>super calss Attributes: account_number, Balance</p>
+            <p>super class Methods: __init__(), Deposit(), Withdraw(), Balance()</p>
+
+            <div class="subclass savings-account">
+                <h3>Savings Account(sub class)</h3>
+                <p>It inherits from Account super class (Balance)</p>
+                <p>Also it has its own attribute interest_rate</p>
+                <p>Also it has its own method add_interest()</p>
+                <p>Also it inherited methods from super class : Deposit(), Withdraw()</p>
+                <p id="savingsBalance">Balance: $1000</p>
+                 <p> interest_rate : 5% </p>
+                <button onclick="deposit('savings', 200)">Deposit $200</button>
+                <button onclick="withdraw('savings', 100)">Withdraw $100</button>
+                <button onclick="add_interest(5%)">add_interest 5%</button>
+
+
+        </div>
+            </div>
+            <div class="subclass checking-account">
+                <h3>Checking Account(sub class)</h3>
+                <p>It inherits from Account super class(Balance)</p>
+                <p>Also it inherited method from super class :Withdraw()</p>
+                <p>Also it has its own attribute overdraft_limit</p>
+                <p>Also it has its own method :withdraw_with_overdraft():</p>
+                <p id="checkingBalance">Balance: $500</p>
+                <p>overdraft_limit: </p>
+                <button onclick="withdraw('checking', 100)">Withdraw $100</button>
+                 <button onclick="overdraft_limit()">overdraft_limit</button>
+            </div>
+            <div class="subclass fixed-deposit-account">
+                <h3>Fixed Deposit Account(sub class)</h3>
+                <p>It inherits from Account super class(Balance)</p>
+                <p>Also it inherited method from super class :Withdraw() and Deposit()</p>
+                <p>Also it has its own attribute duration</p>
+                <p>Also it has its own method :display_duration():</p>
+                <p id="fixedDepositBalance">Balance: $2000</p>
+                <p>duration: 10 years</p>
+                <button onclick="deposit('fixedDeposit', 500)">Deposit $500</button>
+                <button onclick="withdraw('fixedDeposit', 100)">Withdraw $100</button>
+                <button onclick="display_duration()">display_duration</button>
+            </div>
+            <div class="subclass loan-account">
+                <div class="subclass personal-loan">
+                    <h4>Personal Loan(sub class)</h4>
+                <p>Also it has its own attribute loan_amount </p>
+                <p>Also it has its own methods : display_loan_amount() and Pay Installment $200</p>
+                    <p id="personalLoanBalance"><strong>Loan Amount: $10000<strong/></p>
+                    <button onclick="withdraw('personalLoan', 200)">Pay Installment $200</button>
+                     <button onclick="display_duration()">display_loan_amount</button>
+                </div>
+                <div class="subclass car-loan">
+                    <h4>Car Loan(sub class)</h4>
+                    <p id="carLoanBalance"><strong>Loan Amount: $20000<strong/></p>
+                    <button onclick="withdraw('carLoan', 300)">Pay Installment $300</button>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="object-descriptions">
+        <h2>Object Descriptions</h2>
+        <p>Savings Account Object: Created when the page loads, this object represents a savings account. It has properties such as account_number, balance, and interest_rate, along with methods like deposit(), withdraw(), display_balance(), and add_interest().</p>
+        <p>Checking Account Object: Similar to the savings account object, it represents a checking account. It has properties like account_number and balance, and methods like deposit(), withdraw(), and display_balance().</p>
+        <p>Fixed Deposit Account Object: This object represents a fixed deposit account. It has properties like account_number, balance, and duration, along with methods like deposit(), withdraw(), display_balance(), and potentially additional methods specific to fixed deposit accounts.</p>
+        <p>Personal Loan Object: Represents a personal loan account. It has properties like account_number, balance, and loan_amount, along with methods like withdraw() and display_balance().</p>
+        <p>Car Loan Object: Represents a car loan account. It has properties like account_number, balance, and loan_amount, along with methods like withdraw() and display_balance().</p>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; @sudheer debbati</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
